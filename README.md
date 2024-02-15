@@ -57,6 +57,9 @@ RUN THESE THREE SERVERS SEPARATELY
 
 Rooms for Improvement
 Graceful shutdown
+Time Constraint
+Rate Limitter
+Handling Concurrent Request
 More on Error Handling
 Persistent Logging
 For Vertical scaling Microservice pattern
