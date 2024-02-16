@@ -1,5 +1,8 @@
 FETCH TOP 2 TRACK FROM MUSIXMATCH API WITH A GIVEN LOCATION
 
+Before Moving ON KINDLY GENERATE YOUR API KEY FROM HERE AND PUT IT IN all ***three .env(in root folder , in Lyricsmicroservice & Trackmicroservice folder) files with key MUMATCH_API_KEY***
+***https://developer.musixmatch.com/signup***
+
 ***HTTP METHOD GET***
 ****localhost:8082/top-tracks-with-lyrics?location=in***
 
