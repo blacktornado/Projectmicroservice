@@ -2,6 +2,7 @@ package trackmicroservice
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"os"
 
@@ -45,7 +46,9 @@ func GetTopTracks(location string) ([]Track_, error) {
 	}
 	musixmatchAPIBaseURL := os.Getenv("MUSIXMATCHAPIBASEURL")
 	apiKey := os.Getenv("MUMATCH_API_KEY")
-	url := musixmatchAPIBaseURL + "chart.tracks.get?country=" + location + "has_lyrics=1&chart_name=top&page=1&page_size=2&apikey=" + apiKey
+	fmt.Println(location)
+	url := musixmatchAPIBaseURL + "chart.tracks.get?country=" + location + "&has_lyrics=1&chart_name=top&page=1&page_size=2&apikey=" + apiKey
+	fmt.Println(url)
 	resp, err := http.Get(url)
 
 	if err != nil {
@@ -59,5 +62,6 @@ func GetTopTracks(location string) ([]Track_, error) {
 	if err != nil {
 		return nil, err
 	}
+	fmt.Println(trackresponse)
 	return trackresponse.Message.Body.Track_List, nil
 }
